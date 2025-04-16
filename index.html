@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DRACO TATTOO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Oswald', sans-serif; background: url('imagenes/IMG_jose_AE~2.jpg') no-repeat center/cover, rgba(0, 0, 0, 0.3); color: #fff; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 1rem; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('imagenes/istockphoto-453732553-1024x1024.jpg') no-repeat center/cover; position: sticky; top: 0; z-index: 10; }
+    header .logo { height: 80px; width: auto; }
+    header nav a { color: #fff; text-decoration: none; margin-left: 1rem; transition: transform 0.3s ease; display: inline-flex; align-items: center; }
+    header nav a:hover { transform: scale(1.1); }
+    header nav img { width: 24px; height: 24px; }
+    header nav a:hover { color: #39FF14; }
+    .hero { background: url('images/hero-tattoo.jpg') no-repeat center/cover; height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; }
+    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); }
+    .hero h2 { font-size: 4rem; margin: 0; color: #fff; position: relative; z-index: 1; animation: fadeInDown 1s ease; }
+    .hero p { font-size: 1.5rem; color: #ccc; position: relative; z-index: 1; animation: fadeInUp 1s ease; }
+    .btn { background: #39FF14; color: #fff; border: none; padding: 1rem 2rem; margin-top: 1.5rem; font-size: 1.2rem; cursor: pointer; border-radius: 5px; transition: transform 0.3s ease, background 0.3s ease; }
+    .btn:hover { transform: translateY(-2px); background: #32DB12; }
+    .section { padding: 3rem 2rem; text-align: center; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .section.visible { opacity: 1; transform: translateY(0); }
+    .profile-section { max-width: 800px; margin: 0 auto; padding: 2rem; }
+    .profile-section p { text-align: justify; margin: 1.5rem 0; font-size: 1.8rem; line-height: 1.8; color: #fff; font-style: italic; font-weight: bold; }
+    .profile-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; box-shadow: 0 0 20px rgba(166,74,201,0.3); }
+    .categories button { background: #333; color: #fff; border: 1px solid #39FF14; padding: 0.8rem 1.5rem; margin: 0.5rem; border-radius: 5px; cursor: pointer; transition: all 0.3s ease; }
+    .categories button:hover { background: #39FF14; transform: translateY(-2px); }
+    .categories button.active { background: #39FF14; }
+    .gallery { display: none; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem; }
+    .gallery.active { display: flex; animation: fadeIn 0.5s ease; }
+    .gallery img { width: 200px; height: 200px; object-fit: cover; border-radius: 10px; transition: transform 0.3s ease; cursor: pointer; }
+    .gallery img:hover { transform: scale(1.05); }
+    form { display: flex; flex-direction: column; max-width: 400px; margin: 0 auto; }
+    form input, form textarea { margin: 0.5rem 0; padding: 0.8rem; border-radius: 5px; border: none; background: #222; color: #fff; transition: background 0.3s ease; }
+    form input:focus, form textarea:focus { background: #333; outline: none; }
+    form button { background: #39FF14; color: #fff; border: none; padding: 1rem; font-size: 1rem; border-radius: 5px; cursor: pointer; transition: background 0.3s ease; }
+    form button:hover { background: #32DB12; }
+    footer { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('imagenes/istockphoto-453732553-1024x1024.jpg') no-repeat center/cover; padding: 1rem; text-align: center; margin-top: 3rem; display: flex; justify-content: center; align-items: center; }
+    footer p { margin: 0 0.5rem; }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      header { flex-direction: column; padding: 1rem; }
+      header nav { margin-top: 1rem; }
+      .hero h2 { font-size: 2.5rem; }
+      .hero p { font-size: 1.2rem; }
+      .gallery img { width: 150px; height: 150px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="imagenes/logo-draco.jpg" alt="DRACO TATTOO" class="logo">
+    <nav>
+      <a href="https://wa.me/573001112233" target="_blank"><img src="imagenes/𝐛𝐥𝐚𝐜𝐤 𝐢𝐜𝐨𝐧𝐬.jpg" alt="WhatsApp"></a>
+      <a href="https://instagram.com/dracotattoo" target="_blank"><img src="imagenes/Instagram logo black.jpg" alt="Instagram"></a>
+      <a href="https://tiktok.com/@dracotattoo" target="_blank"><img src="imagenes/TikTok app icon.jpg" alt="TikTok"></a>
+      <a href="#cita">Apartar Cita</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>DRACO TATTOO</h2>
+    <p>Itagüí, San Antonio de Prado</p>
+    <button class="btn" onclick="document.getElementById('cita').scrollIntoView({behavior: 'smooth'})">Apartar Cita</button>
+  </section>
+
+  <section class="section profile-section">
+    <img src="images/jose-rivas.jpg" alt="José Rivas" class="profile-img">
+    <h3>José Rivas</h3>
+    <p>Hay hombres que nacen para dejar huella, y José Rivas es uno de ellos.</p>
+    <p>Desde su infancia, con pinceles en mano, José entendió que el arte no era solo una expresión, sino un lenguaje profundo capaz de tocar el alma. Con el tiempo, decidió llevar ese lenguaje a la piel, convirtiendo cuerpos en lienzos vivos.</p>
+    <p>Formado en una de las academias más respetadas de Medellín, José no solo perfeccionó su técnica: encontró su propósito. Cada tatuaje que realiza es una mezcla de perfección obsesiva y respeto absoluto por quien lo lleva.</p>
+    <p>Tatúa con la pureza de quien rechaza la violencia y honra cada centímetro de piel como si se tratara de sí mismo.</p>
+    <p>Sus manos no solo dibujan… cuentan historias, sellan recuerdos y transforman cicatrices en arte. José Rivas no hace tatuajes.</p>
+    <p>Él inmortaliza momentos.</p>
+  </section>
+
+
+  <section class="section">
+    <h3>Categorías</h3>
+    <div class="categories">
+      <button onclick="showGallery('realismo')">Realismo</button>
+      <button onclick="showGallery('minimalistas')">Minimalistas</button>
+      <button onclick="showGallery('tradicionales')">Tradicionales</button>
+      <button onclick="showGallery('blackwork')">Blackwork</button>
+    </div>
+    <div id="realismo" class="gallery">
+      <img src="images/realismo/1.jpg" alt="Realismo 1">
+      <img src="images/realismo/2.jpg" alt="Realismo 2">
+    </div>
+    <div id="minimalistas" class="gallery">
+      <img src="images/minimalista/1.jpg" alt="Minimalista 1">
+      <img src="images/minimalista/2.jpg" alt="Minimalista 2">
+    </div>
+    <div id="tradicionales" class="gallery">
+      <img src="images/geometrico/1.jpg" alt="Tradicional 1">
+      <img src="images/geometrico/2.jpg" alt="Tradicional 2">
+    </div>
+    <div id="blackwork" class="gallery">
+      <img src="images/blackwork/1.jpg" alt="Blackwork 1">
+      <img src="images/blackwork/2.jpg" alt="Blackwork 2">
+    </div>
+  </section>
+
+  <section id="cita" class="section">
+    <h3>Apartar Cita</h3>
+    <form id="citaForm" onsubmit="handleSubmit(event)">
+      <input type="text" placeholder="Nombre" required>
+      <input type="tel" placeholder="Teléfono" required pattern="[0-9]{10}">
+      <input type="date" required>
+      <textarea placeholder="Descripción de la idea" rows="4" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Itagüí, San Antonio de Prado | +57 322 723 7940</p>
+    <p>&copy; 2025 Draco Tattoo. Tu piel, nuestro arte.</p>
+  </footer>
+
+  <script>
+    // Mostrar/ocultar galerías
+    function showGallery(category) {
+      // Ocultar todas las galerías
+      document.querySelectorAll('.gallery').forEach(gallery => {
+        gallery.classList.remove('active');
+      });
+      // Desactivar todos los botones
+      document.querySelectorAll('.categories button').forEach(button => {
+        button.classList.remove('active');
+      });
+      // Mostrar la galería seleccionada
+      const selectedGallery = document.getElementById(category);
+      const selectedButton = document.querySelector(`button[onclick="showGallery('${category}')"]`);
+      if (selectedGallery && selectedButton) {
+        selectedGallery.classList.add('active');
+        selectedButton.classList.add('active');
+      }
+    }
+
+    // Animación de secciones al hacer scroll
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Manejo del formulario
+    function handleSubmit(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const data = Object.fromEntries(formData);
+      
+      // Aquí puedes agregar la lógica para enviar los datos a un servidor
+      console.log('Datos de la cita:', data);
+      
+      // Mostrar mensaje de éxito
+      alert('¡Gracias! Nos pondremos en contacto contigo pronto.');
+      event.target.reset();
+    }
+  </script>
+</body>
+</html>
